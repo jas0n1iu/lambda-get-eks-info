@@ -27,4 +27,4 @@ zip -r code.zip lambda_function.py
 aws s3 cp code.zip s3://$S3_BUCKET_NAME
 
 # 获取 Lambda Layer 版本 ARN
-LAYER_ARN=$(aws lambda list-layer-versions --layer-name $LAYER_NAME --query 'LayerVersions[0].LayerVersionArn' --output text)
+aws lambda list-layer-versions --layer-name $LAYER_NAME --query 'LayerVersions[0].LayerVersionArn' --output text
